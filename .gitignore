@@ -1,0 +1,26 @@
+# --- secrets & local config ---
+.env
+server/.env
+*.env.local
+project.private.config.json
+
+# --- dependencies ---
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# --- AI agent / dev process artifacts ---
+.agents/
+.codex/
+NEXT_STEPS.md
+ASSETS.md
+AGENTS.md
+
+# --- temp & build ---
+tmp/
+tmp_*/
+dist/
+build/
+*.log
+.DS_Store
+Thumbs.db
