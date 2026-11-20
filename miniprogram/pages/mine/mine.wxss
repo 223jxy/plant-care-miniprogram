@@ -1,0 +1,203 @@
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 22rpx;
+  padding: 32rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 16rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(16, 24, 40, 0.05);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background: #eaf6ee;
+  color: #2e7d32;
+  font-size: 38rpx;
+  font-weight: 800;
+}
+
+.profile-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.nickname {
+  color: #1d2939;
+  font-size: 34rpx;
+  font-weight: 800;
+}
+
+.role {
+  color: #667085;
+  font-size: 25rpx;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20rpx;
+  margin-top: 24rpx;
+}
+
+.summary-card {
+  display: flex;
+  min-height: 150rpx;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8rpx;
+  padding: 24rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 16rpx;
+  background: #ffffff;
+}
+
+.summary-number {
+  color: #2e7d32;
+  font-size: 44rpx;
+  font-weight: 800;
+}
+
+.summary-label {
+  color: #667085;
+  font-size: 24rpx;
+}
+
+.device-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  margin-top: 28rpx;
+}
+
+.section-title {
+  color: #1d2939;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 116rpx;
+  height: 60rpx;
+  border-radius: 12rpx;
+  background: #66bb6a;
+  color: #ffffff;
+  font-size: 25rpx;
+  font-weight: 700;
+}
+
+.device-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 28rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 16rpx;
+  background: #ffffff;
+}
+
+.device-name,
+.device-meta {
+  display: block;
+}
+
+.device-name {
+  color: #1d2939;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.device-meta {
+  margin-top: 8rpx;
+  color: #667085;
+  font-size: 24rpx;
+}
+
+.device-state {
+  flex: 0 0 auto;
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.device-state-online {
+  background: #eaf6ee;
+  color: #2e7d32;
+}
+
+.device-state-offline {
+  background: #f2f4f7;
+  color: #667085;
+}
+
+.settings-card {
+  margin-top: 28rpx;
+  padding: 28rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 16rpx;
+  background: #ffffff;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f2f4f7;
+}
+
+.setting-row:last-child {
+  border-bottom: 0;
+}
+
+.setting-title,
+.setting-copy {
+  display: block;
+}
+
+.setting-title {
+  color: #1d2939;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.setting-copy {
+  margin-top: 6rpx;
+  color: #667085;
+  font-size: 24rpx;
+  line-height: 1.4;
+}
+
+.mini-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128rpx;
+  height: 64rpx;
+  border: 1rpx solid #66bb6a;
+  border-radius: 12rpx;
+  background: #ffffff;
+  color: #2e7d32;
+  font-size: 26rpx;
+  font-weight: 700;
+}
