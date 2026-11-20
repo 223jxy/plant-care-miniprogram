@@ -1,0 +1,28 @@
+<view class="page page-bind-device">
+  <view class="bind-header">
+    <text class="header-title">绑定设备</text>
+    <text class="header-subtitle">这里先模拟 BLE 配网流程，等真实硬件 UUID 确定后再接入微信蓝牙 API。</text>
+  </view>
+
+  <view class="bind-card">
+    <view class="step-row step-{{bindStep}}">
+      <text class="step-label">{{bindStep}}</text>
+      <text class="step-message">{{bindMessage}}</text>
+    </view>
+
+    <button
+      class="primary-button"
+      loading="{{isScanning}}"
+      disabled="{{isScanning}}"
+      bindtap="onStartScan"
+    >
+      {{scanButtonText}}
+    </button>
+
+    <view class="found-card" wx:if="{{foundDevice}}">
+      <text class="found-name">{{foundDevice.name}}</text>
+      <text class="found-meta">信号 {{foundDevice.rssi}} dBm</text>
+      <button class="secondary-button" bindtap="onBindFoundDevice">模拟配网绑定</button>
+    </view>
+  </view>
+</view>
