@@ -1,0 +1,144 @@
+.diagnosis-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+  margin-bottom: 24rpx;
+}
+
+.header-title {
+  color: #1d2939;
+  font-size: 40rpx;
+  font-weight: 800;
+}
+
+.header-subtitle {
+  color: #667085;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.context-card,
+.question-card {
+  padding: 28rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 16rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(16, 24, 40, 0.05);
+}
+
+.context-title {
+  display: block;
+  margin-bottom: 18rpx;
+  color: #1d2939;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.context-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.context-item,
+.question-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.context-item {
+  color: #667085;
+  font-size: 25rpx;
+}
+
+.question-card {
+  margin-top: 24rpx;
+}
+
+.section-title {
+  color: #1d2939;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.count-text {
+  color: #667085;
+  font-size: 24rpx;
+}
+
+.question-input {
+  width: 100%;
+  min-height: 220rpx;
+  margin-top: 18rpx;
+  padding: 22rpx;
+  border: 1rpx solid #d0d5dd;
+  border-radius: 14rpx;
+  background: #f9fafb;
+  color: #1d2939;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+.form-error {
+  display: block;
+  margin-top: 14rpx;
+  color: #b42318;
+  font-size: 24rpx;
+  line-height: 1.4;
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  margin-top: 22rpx;
+  border-radius: 14rpx;
+  background: #66bb6a;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.primary-button[disabled] {
+  background: #a6d8a8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  margin-top: 24rpx;
+  padding: 28rpx;
+  border: 1rpx solid #d6eadf;
+  border-radius: 16rpx;
+  background: #f7fcf8;
+}
+
+.result-title {
+  color: #1d2939;
+  font-size: 31rpx;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.result-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.result-label {
+  color: #2e7d32;
+  font-size: 25rpx;
+  font-weight: 800;
+}
+
+.result-item {
+  color: #344054;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
