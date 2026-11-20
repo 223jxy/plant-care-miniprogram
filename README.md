@@ -55,6 +55,29 @@ Behind that single contract sit three sources that can be swapped at runtime:
 - A missing or non-numeric reading scores a **neutral 0.6**, deliberately not `0` and not `1` — an absent sensor must not masquerade as a healthy plant, nor as a dead one.
 - Final score is the weighted sum (see table below), rounded to an integer 0–100.
 
+## Measured results
+
+All figures are counted from the committed source, not estimated.
+
+| Metric | Value | How it was obtained |
+|---|---|---|
+| Pages | **7** (`index` / `control` / `device-detail` / `diagnosis` / `diary` / `mine` / `bind-device`) | `ls miniprogram/pages/` |
+| Total code | **3,959 lines** across JS + WXML + WXSS | `find miniprogram server -name "*.js" -o -name "*.wxml" -o -name "*.wxss"` + `wc -l` |
+| Data sources behind one contract | **3** (backend HTTP / local mock / MQTT-over-BLE) | `miniprogram/services/data-source.js` |
+| Health-score inputs | **6** weighted metrics | `plant-rules.js` `SCORE_WEIGHTS` |
+| Integration assertions | **44** (32 data-source + 12 HTTP) | `grep -cE "^(test\|it\|assert)"` on both test files |
+| Test outcome | `server HTTP integration check passed` | `npm run test:integration` in `server/` |
+
+### Health scoring model (verified weights)
+
+```
+soilMoisture 35 | lightLux 20 | temperature 15 | humidity 10 | soilPh 10 | soilEc 10
+```
+
+Each metric is normalised against a per-plant threshold range, then weighted and summed. **A missing or out-of-range reading scores 0.6** — deliberately neither 0 nor 1: a sensor dropout should drift the score toward "unknown" rather than trigger a false "plant is dying" alert. The score is clamped to 0–100 and bucketed (>=85 = 状态很好).
+
+**Not measured / not claimed**: real-device BLE pairing success rate and long-term sensor drift — both need hardware in hand, so no figure is published.
+
 ## Features
 
 | Area | What it does |
