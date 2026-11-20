@@ -1,0 +1,71 @@
+<view class="page page-mine">
+  <view class="profile-card">
+    <view class="avatar">绿</view>
+    <view class="profile-copy">
+      <text class="nickname">{{user.nickname}}</text>
+      <text class="role">{{user.role}}</text>
+    </view>
+  </view>
+
+  <view class="summary-grid">
+    <view class="summary-card">
+      <text class="summary-number">{{deviceCount}}</text>
+      <text class="summary-label">已绑定设备</text>
+    </view>
+    <view class="summary-card">
+      <text class="summary-number">0</text>
+      <text class="summary-label">未读提醒</text>
+    </view>
+  </view>
+
+  <view class="device-section">
+    <view class="section-title-row">
+      <text class="section-title">我的设备</text>
+      <button class="add-button" bindtap="onGoBindDevice">添加</button>
+    </view>
+    <view
+      class="device-card"
+      wx:for="{{devices}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onGoDeviceDetail"
+    >
+      <view>
+        <text class="device-name">{{item.name}}</text>
+        <text class="device-meta">{{item.spaceName}} · {{item.plantType}}</text>
+      </view>
+      <text class="device-state device-state-{{item.onlineType}}">{{item.onlineText}}</text>
+    </view>
+  </view>
+
+  <view class="settings-card">
+    <view class="setting-row">
+      <view>
+        <text class="setting-title">数据来源</text>
+        <text class="setting-copy">{{dataSourceText}}</text>
+      </view>
+      <switch checked="{{backendApiEnabled}}" disabled="{{isCheckingBackend}}" color="#66BB6A" bindchange="onBackendApiChange" />
+    </view>
+    <view class="setting-row">
+      <view>
+        <text class="setting-title">离线演示</text>
+        <text class="setting-copy">开启后首页和控制页会显示设备离线</text>
+      </view>
+      <switch checked="{{offlineDemoEnabled}}" color="#66BB6A" bindchange="onOfflineDemoChange" />
+    </view>
+    <view class="setting-row">
+      <view>
+        <text class="setting-title">异常提醒</text>
+        <text class="setting-copy">缺水、离线、低电量时提醒</text>
+      </view>
+      <switch checked="{{notificationEnabled}}" color="#66BB6A" bindchange="onNotificationChange" />
+    </view>
+    <view class="setting-row">
+      <view>
+        <text class="setting-title">历史数据导出</text>
+        <text class="setting-copy">{{exportText}}</text>
+      </view>
+      <button class="mini-button" bindtap="onExportData">导出</button>
+    </view>
+  </view>
+</view>
