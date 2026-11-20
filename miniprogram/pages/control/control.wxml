@@ -1,0 +1,127 @@
+<view class="page page-control">
+  <view class="control-header">
+    <text class="header-eyebrow">{{device.spaceName}}</text>
+    <text class="header-title">{{device.name}}</text>
+    <text class="device-status device-status-{{device.onlineType}}">{{device.onlineText}}</text>
+    <text class="header-subtitle">远程控制会先模拟发送，后续再接入真实设备。</text>
+  </view>
+
+  <view class="control-offline-banner" wx:if="{{isDeviceOffline}}">
+    <text>{{offlineNotice}}</text>
+  </view>
+  <view class="control-offline-banner" wx:if="{{dataSourceNotice}}">
+    <text>{{dataSourceNotice}}</text>
+  </view>
+
+  <view class="control-card">
+    <view class="section-title-row">
+      <text class="section-title">手动浇水</text>
+      <text class="duration-value">{{durationSeconds}} 秒</text>
+    </view>
+    <slider
+      min="1"
+      max="10"
+      step="1"
+      value="{{durationSeconds}}"
+      activeColor="#66BB6A"
+      backgroundColor="#E4E7EC"
+      block-color="#2E7D32"
+      bindchange="onDurationChange"
+    />
+    <view class="range-row">
+      <text>1 秒</text>
+      <text>10 秒</text>
+    </view>
+    <text class="form-error" wx:if="{{waterErrorText}}">{{waterErrorText}}</text>
+    <button
+      class="primary-button"
+      loading="{{isSendingWater}}"
+      disabled="{{isSendingWater || isDeviceOffline}}"
+      bindtap="onWaterTap"
+    >
+      {{waterButtonText}}
+    </button>
+    <text class="command-status">{{waterCommandText}}</text>
+  </view>
+
+  <view class="control-card threshold-card">
+    <view class="section-title-row">
+      <text class="section-title">阈值设置</text>
+      <text class="save-state">{{thresholdSaveText}}</text>
+    </view>
+    <text class="form-error" wx:if="{{thresholdErrorText}}">{{thresholdErrorText}}</text>
+
+    <view class="threshold-row">
+      <view class="threshold-label-row">
+        <text class="threshold-label">土壤湿度下限</text>
+        <text class="threshold-value">{{thresholdForm.soilMoistureMin}}%</text>
+      </view>
+      <slider
+        min="20"
+        max="60"
+        step="1"
+        value="{{thresholdForm.soilMoistureMin}}"
+        activeColor="#66BB6A"
+        backgroundColor="#E4E7EC"
+        block-color="#2E7D32"
+        data-key="soilMoistureMin"
+        bindchange="onThresholdChange"
+      />
+    </view>
+
+    <view class="threshold-row">
+      <view class="threshold-label-row">
+        <text class="threshold-label">光照下限</text>
+        <text class="threshold-value">{{thresholdForm.lightLuxMin}} lux</text>
+      </view>
+      <slider
+        min="300"
+        max="2000"
+        step="100"
+        value="{{thresholdForm.lightLuxMin}}"
+        activeColor="#29B6F6"
+        backgroundColor="#E4E7EC"
+        block-color="#188ECA"
+        data-key="lightLuxMin"
+        bindchange="onThresholdChange"
+      />
+    </view>
+
+    <view class="threshold-row">
+      <view class="threshold-label-row">
+        <text class="threshold-label">温度上限</text>
+        <text class="threshold-value">{{thresholdForm.temperatureMax}}℃</text>
+      </view>
+      <slider
+        min="25"
+        max="40"
+        step="1"
+        value="{{thresholdForm.temperatureMax}}"
+        activeColor="#FFA726"
+        backgroundColor="#E4E7EC"
+        block-color="#B54708"
+        data-key="temperatureMax"
+        bindchange="onThresholdChange"
+      />
+    </view>
+
+    <button class="secondary-button" bindtap="onSaveThresholds">保存阈值</button>
+  </view>
+
+  <view class="control-card camera-card">
+    <view class="section-title-row">
+      <text class="section-title">设备拍照</text>
+      <text class="camera-state">{{cameraStateText}}</text>
+    </view>
+    <text class="camera-desc">用于生成成长日记照片。当前为模拟命令，不会调用真实摄像头。</text>
+    <button
+      class="secondary-button"
+      loading="{{isTakingPhoto}}"
+      disabled="{{isTakingPhoto || isDeviceOffline}}"
+      bindtap="onCaptureTap"
+    >
+      {{captureButtonText}}
+    </button>
+    <text class="command-status">{{cameraCommandText}}</text>
+  </view>
+</view>
