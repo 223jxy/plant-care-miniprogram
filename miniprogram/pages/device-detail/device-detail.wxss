@@ -1,0 +1,49 @@
+.detail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+  margin-bottom: 24rpx;
+}
+
+.device-name {
+  color: #1d2939;
+  font-size: 40rpx;
+  font-weight: 800;
+}
+
+.device-subtitle {
+  color: #667085;
+  font-size: 26rpx;
+}
+
+.info-card {
+  margin-bottom: 24rpx;
+  padding: 28rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 16rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(16, 24, 40, 0.05);
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #f2f4f7;
+  color: #344054;
+  font-size: 26rpx;
+}
+
+.info-row:last-child {
+  border-bottom: 0;
+}
+
+.section-title {
+  display: block;
+  margin-bottom: 8rpx;
+  color: #1d2939;
+  font-size: 30rpx;
+  font-weight: 800;
+}
