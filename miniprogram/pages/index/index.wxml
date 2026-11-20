@@ -1,0 +1,42 @@
+<view class="page page-index">
+  <view class="dashboard-hero">
+    <view class="hero-topline">
+      <text class="device-space">{{device.spaceName}}</text>
+      <text class="device-status device-status-{{device.onlineType}}">{{device.onlineText}}</text>
+    </view>
+    <text class="device-name">{{device.name}}</text>
+    <text class="freshness">{{freshness}}</text>
+    <view class="offline-banner" wx:if="{{isDeviceOffline}}">
+      <text>{{offlineNotice}}</text>
+    </view>
+    <view class="offline-banner" wx:if="{{dataSourceNotice}}">
+      <text>{{dataSourceNotice}}</text>
+    </view>
+
+    <view class="health-row">
+      <view class="health-score">
+        <text class="score-number">{{healthScore}}</text>
+        <text class="score-unit">分</text>
+      </view>
+      <view class="health-copy">
+        <text class="health-label">健康评分</text>
+        <text class="health-level health-level-{{healthLevel.type}}">{{healthLevel.text}}</text>
+      </view>
+    </view>
+
+    <button class="diagnosis-button" bindtap="onGoDiagnosis">AI 问诊</button>
+  </view>
+
+  <view class="metric-grid">
+    <view class="metric-card" wx:for="{{metricCards}}" wx:key="key">
+      <view class="metric-topline">
+        <text class="metric-label">{{item.label}}</text>
+        <text class="metric-status metric-status-{{item.status.type}}">{{item.status.text}}</text>
+      </view>
+      <view class="metric-value-row">
+        <text class="metric-value">{{item.value}}</text>
+        <text class="metric-unit" wx:if="{{item.unit}}">{{item.unit}}</text>
+      </view>
+    </view>
+  </view>
+</view>
