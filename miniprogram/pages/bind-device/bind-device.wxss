@@ -1,0 +1,98 @@
+.bind-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+  margin-bottom: 24rpx;
+}
+
+.header-title {
+  color: #1d2939;
+  font-size: 40rpx;
+  font-weight: 800;
+}
+
+.header-subtitle {
+  color: #667085;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.bind-card {
+  padding: 30rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 16rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(16, 24, 40, 0.05);
+}
+
+.step-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+  margin-bottom: 24rpx;
+  padding: 24rpx;
+  border-radius: 14rpx;
+  background: #f9fafb;
+}
+
+.step-label {
+  color: #2e7d32;
+  font-size: 24rpx;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.step-message {
+  color: #344054;
+  font-size: 27rpx;
+  line-height: 1.5;
+}
+
+.primary-button,
+.secondary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 86rpx;
+  border-radius: 14rpx;
+  font-size: 29rpx;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: #66bb6a;
+  color: #ffffff;
+}
+
+.primary-button[disabled] {
+  background: #a6d8a8;
+}
+
+.secondary-button {
+  margin-top: 20rpx;
+  border: 1rpx solid #66bb6a;
+  background: #ffffff;
+  color: #2e7d32;
+}
+
+.found-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  margin-top: 24rpx;
+  padding: 24rpx;
+  border: 1rpx solid #d6eadf;
+  border-radius: 14rpx;
+  background: #f7fcf8;
+}
+
+.found-name {
+  color: #1d2939;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.found-meta {
+  color: #667085;
+  font-size: 24rpx;
+}
