@@ -1,0 +1,200 @@
+.control-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+  margin-bottom: 24rpx;
+}
+
+.header-eyebrow {
+  color: #2e7d32;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.header-title {
+  color: #1d2939;
+  font-size: 40rpx;
+  font-weight: 800;
+}
+
+.header-subtitle {
+  color: #667085;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.device-status {
+  align-self: flex-start;
+  min-width: 88rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.device-status-online {
+  background: #eaf6ee;
+  color: #2e7d32;
+}
+
+.device-status-offline {
+  background: #f2f4f7;
+  color: #667085;
+}
+
+.control-offline-banner {
+  margin-bottom: 24rpx;
+  padding: 20rpx 22rpx;
+  border: 1rpx solid #d0d5dd;
+  border-radius: 14rpx;
+  background: #f9fafb;
+  color: #475467;
+  font-size: 25rpx;
+  line-height: 1.45;
+}
+
+.control-card {
+  padding: 30rpx;
+  border: 1rpx solid #e4e7ec;
+  border-radius: 16rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(16, 24, 40, 0.05);
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  color: #1d2939;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.duration-value {
+  color: #2e7d32;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.range-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rpx;
+  color: #667085;
+  font-size: 24rpx;
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  margin-top: 28rpx;
+  border-radius: 14rpx;
+  background: #66bb6a;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.primary-button[disabled] {
+  background: #a6d8a8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.command-status {
+  display: block;
+  margin-top: 18rpx;
+  color: #667085;
+  font-size: 25rpx;
+  line-height: 1.5;
+}
+
+.form-error {
+  display: block;
+  margin-top: 14rpx;
+  color: #b42318;
+  font-size: 24rpx;
+  line-height: 1.4;
+}
+
+.threshold-card {
+  margin-top: 24rpx;
+}
+
+.camera-card {
+  margin-top: 24rpx;
+}
+
+.save-state {
+  max-width: 320rpx;
+  color: #667085;
+  text-align: right;
+  font-size: 24rpx;
+  line-height: 1.4;
+}
+
+.threshold-row {
+  padding: 18rpx 0;
+  border-top: 1rpx solid #f2f4f7;
+}
+
+.threshold-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+  margin-bottom: 8rpx;
+}
+
+.threshold-label {
+  color: #344054;
+  font-size: 27rpx;
+  font-weight: 600;
+}
+
+.threshold-value {
+  color: #1d2939;
+  font-size: 26rpx;
+  font-weight: 800;
+}
+
+.secondary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84rpx;
+  margin-top: 18rpx;
+  border: 1rpx solid #66bb6a;
+  border-radius: 14rpx;
+  background: #ffffff;
+  color: #2e7d32;
+  font-size: 29rpx;
+  font-weight: 700;
+}
+
+.secondary-button[disabled] {
+  border-color: #d0d5dd;
+  background: #f2f4f7;
+  color: #98a2b3;
+}
+
+.camera-state {
+  color: #29b6f6;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.camera-desc {
+  display: block;
+  margin-bottom: 20rpx;
+  color: #667085;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
