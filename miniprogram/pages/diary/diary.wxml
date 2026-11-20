@@ -1,0 +1,62 @@
+<view class="page page-diary">
+  <view class="diary-header">
+    <text class="header-title">成长日记</text>
+    <text class="header-subtitle">记录浇水、健康变化和植物照片。</text>
+  </view>
+
+  <view class="empty-card notice-card" wx:if="{{dataSourceNotice}}">
+    <text class="empty-copy">{{dataSourceNotice}}</text>
+  </view>
+
+  <view class="timeline" wx:if="{{entries.length}}">
+    <view class="timeline-item" wx:for="{{entries}}" wx:key="id" data-id="{{item.id}}" bindtap="onDiaryTap">
+      <view class="timeline-dot">{{item.eventIcon}}</view>
+      <view class="timeline-card">
+        <view class="timeline-topline">
+          <text class="event-name">{{item.eventName}}</text>
+          <text class="event-time">{{item.displayTime}}</text>
+        </view>
+        <text class="event-content">{{item.content}}</text>
+        <view class="snapshot-row">
+          <text>湿度 {{item.snapshot.soilMoisture}}%</text>
+          <text>光照 {{item.snapshot.lightLux}} lux</text>
+          <text>评分 {{item.snapshot.healthScore}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty-card" wx:else>
+    <text class="empty-title">还没有成长日记</text>
+    <text class="empty-copy">设备上线后，浇水、健康变化和照片会自动生成记录。</text>
+  </view>
+
+  <view class="detail-card" wx:if="{{selectedEntry}}">
+    <view class="timeline-topline">
+      <text class="event-name">当前查看：{{selectedEntry.eventName}}</text>
+      <text class="event-time">{{selectedEntry.displayTime}}</text>
+    </view>
+    <text class="event-content">{{selectedEntry.content}}</text>
+    <view class="photo-panel">
+      <image
+        wx:if="{{selectedEntry.hasImage}}"
+        class="diary-photo"
+        src="{{selectedEntry.imageUrl}}"
+        mode="aspectFill"
+        bindtap="onPreviewImage"
+      />
+      <view class="photo-placeholder" wx:else>
+        <text class="photo-mark">相</text>
+        <text class="photo-title">{{selectedEntry.photoTitle}}</text>
+        <text class="photo-copy">{{selectedEntry.photoHint}}</text>
+      </view>
+    </view>
+    <button
+      class="preview-button"
+      disabled="{{!selectedEntry.hasImage}}"
+      bindtap="onPreviewImage"
+    >
+      {{selectedEntry.previewButtonText}}
+    </button>
+  </view>
+</view>
