@@ -1,0 +1,52 @@
+<view class="page page-diagnosis">
+  <view class="diagnosis-header">
+    <text class="header-title">AI 问诊</text>
+    <text class="header-subtitle">输入你看到的问题，小程序会结合当前传感器数据给出养护建议。</text>
+  </view>
+
+  <view class="context-card">
+    <text class="context-title">{{device.name}}</text>
+    <text class="form-error" wx:if="{{dataSourceNotice}}">{{dataSourceNotice}}</text>
+    <view class="context-list">
+      <view class="context-item" wx:for="{{contextMetrics}}" wx:key="key">
+        <text>{{item.label}}</text>
+        <text>{{item.displayValue}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="question-card">
+    <view class="question-topline">
+      <text class="section-title">描述问题</text>
+      <text class="count-text">{{questionLength}}/120</text>
+    </view>
+    <textarea
+      class="question-input"
+      maxlength="120"
+      value="{{question}}"
+      placeholder="例如：叶子发黄怎么办？"
+      bindinput="onQuestionInput"
+    />
+    <text class="form-error" wx:if="{{questionErrorText}}">{{questionErrorText}}</text>
+    <button
+      class="primary-button"
+      loading="{{isDiagnosing}}"
+      disabled="{{isDiagnosing}}"
+      bindtap="onSubmitDiagnosis"
+    >
+      {{diagnosisButtonText}}
+    </button>
+  </view>
+
+  <view class="result-card" wx:if="{{diagnosisResult}}">
+    <text class="result-title">{{diagnosisResult.title}}</text>
+    <view class="result-section">
+      <text class="result-label">可能原因</text>
+      <text class="result-item" wx:for="{{diagnosisResult.reasons}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view class="result-section">
+      <text class="result-label">建议操作</text>
+      <text class="result-item" wx:for="{{diagnosisResult.actions}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+</view>
