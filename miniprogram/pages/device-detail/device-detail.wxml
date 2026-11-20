@@ -1,0 +1,33 @@
+<view class="page page-device-detail">
+  <view class="detail-header">
+    <text class="device-name">{{device.name}}</text>
+    <text class="device-subtitle">{{device.spaceName}} · {{device.plantType}}</text>
+  </view>
+
+  <view class="info-card">
+    <view class="info-row">
+      <text>序列号</text>
+      <text>{{device.sn}}</text>
+    </view>
+    <view class="info-row">
+      <text>固件版本</text>
+      <text>{{device.firmwareVersion}}</text>
+    </view>
+    <view class="info-row">
+      <text>在线状态</text>
+      <text>{{device.onlineText}}</text>
+    </view>
+    <view class="info-row">
+      <text>最后上线</text>
+      <text>{{lastSeenText}}</text>
+    </view>
+  </view>
+
+  <view class="info-card">
+    <text class="section-title">关键阈值</text>
+    <view class="info-row" wx:for="{{thresholdRows}}" wx:key="label">
+      <text>{{item.label}}</text>
+      <text>{{item.value}}</text>
+    </view>
+  </view>
+</view>
