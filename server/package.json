@@ -1,0 +1,12 @@
+{
+  "name": "green-plant-assistant-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "绿小护微信小程序后端服务草案",
+  "scripts": {
+    "check": "node --check src/app.js",
+    "test:integration": "node tests/http.integration.js",
+    "start": "node src/app.js"
+  },
+  "dependencies": {}
+}
